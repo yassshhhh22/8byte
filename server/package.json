@@ -12,6 +12,7 @@
     "verify:providers": "tsx src/scripts/verifyProviders.ts"
   },
   "dependencies": {
+    "@types/node": "^22.20.2",
     "cheerio": "^1.2.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
@@ -26,7 +27,6 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
-    "@types/node": "^22.20.2",
     "@types/supertest": "^7.2.1",
     "@vitest/coverage-v8": "^5.0.0",
     "supertest": "^7.2.2",
