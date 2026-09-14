@@ -125,4 +125,3 @@ Yahoo Finance and Google Finance do not provide guaranteed public APIs for this 
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [Challenges](docs/CHALLENGES.md)
-- [Loom outline](docs/LOOM_OUTLINE.md)
