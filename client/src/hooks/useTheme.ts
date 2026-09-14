@@ -9,15 +9,6 @@ export interface ThemeRevealOrigin {
   y: number;
 }
 
-interface ViewTransitionDocument extends Document {
-  startViewTransition?: (
-    update: () => void,
-  ) => {
-    ready: Promise<void>;
-    finished: Promise<void>;
-  };
-}
-
 export function useTheme() {
   const [theme, setTheme] =
     usePersistentState<Theme>(
@@ -48,9 +39,6 @@ export function useTheme() {
         ? "light"
         : "dark";
 
-    const transitionDocument =
-      document as ViewTransitionDocument;
-
     const reduceMotion =
       typeof window.matchMedia === "function" &&
       window.matchMedia(
@@ -59,7 +47,7 @@ export function useTheme() {
 
     if (
       !origin ||
-      !transitionDocument.startViewTransition ||
+      !document.startViewTransition ||
       reduceMotion
     ) {
       setTheme(nextTheme);
@@ -82,7 +70,7 @@ export function useTheme() {
     transitionInProgress.current = true;
 
     const transition =
-      transitionDocument.startViewTransition(
+      document.startViewTransition(
         () => {
           document.documentElement.dataset.theme =
             nextTheme;
